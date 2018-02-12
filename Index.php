@@ -10,18 +10,24 @@
         <?php
             // Require statements
             require_once "PHP/TodoItem.php";
+            require_once "PHP/HtmlBuilder.php";
 
             // Get the array of items
             $itemArray = array(
                 new TodoItem("Haha1"),
+                new TodoItem("Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String "),
                 new TodoItem("Haha2")
             );
+            $builder = new HtmlBuilder();
 
             // Build up the html for each item
             foreach ($itemArray as $item)
             {
-                echo "$item->content<br/>";
+                $builder->addTodoItem($item);
             }
+
+            // Display contents
+            echo $builder->content;
         ?>
     </body>
 </html>

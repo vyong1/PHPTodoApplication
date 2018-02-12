@@ -1,4 +1,4 @@
 -Model
+    -SQL lite
 -View
-    -> foreach note <div> [Done][Delete] Note contents </div>
 -Controller

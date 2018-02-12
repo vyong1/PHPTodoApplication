@@ -1,11 +1,11 @@
 <?php
 class TodoItem
 {
-    public $content;
+    public $name;
 
-    function __construct($c_content)
+    function __construct($c_name)
     {
-        $this->content = $c_content;
+        $this->name = $c_name;
     }
 }
 ?>
