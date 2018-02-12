@@ -9,25 +9,30 @@
     <body>
         <?php
             // Require statements
-            require_once "PHP/TodoItem.php";
-            require_once "PHP/HtmlBuilder.php";
+            require_once "PHP/Model/TodoItem.php";
+            require_once "PHP/Model/HtmlBuilder.php";
 
             // Get the array of items
-            $itemArray = array(
+            $todoItemArray = array(
                 new TodoItem("Haha1"),
                 new TodoItem("Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String Very Long String "),
                 new TodoItem("Haha2")
             );
             $builder = new HtmlBuilder();
-
-            // Build up the html for each item
-            foreach ($itemArray as $item)
-            {
-                $builder->addTodoItem($item);
-            }
+            $builder->build($todoItemArray);
 
             // Display contents
             echo $builder->content;
         ?>
+
+
+        <!-- Temporary -->
+        <hr>
+        <form action="PHP/Controller/Test.php" method="post">
+            Name: <input type="text" name="name"><br>
+            E-mail: <input type="text" name="email"><br>
+            <input type="submit">
+        </form>
+
     </body>
 </html>
