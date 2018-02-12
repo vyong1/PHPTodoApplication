@@ -6,16 +6,22 @@
         <script src="Resources\index.js"></script>
         <link rel="stylesheet" href="Resources\index.css" />
     </head>
-    <body>   
+    <body>
         <?php
-        $strArray = array(
-            "Haha1",
-            "Haha2"
-        );
-        foreach ($strArray as $s)
-        {
-            echo "$s";
-        }
+            // Require statements
+            require_once "PHP/TodoItem.php";
+
+            // Get the array of items
+            $itemArray = array(
+                new TodoItem("Haha1"),
+                new TodoItem("Haha2")
+            );
+
+            // Build up the html for each item
+            foreach ($itemArray as $item)
+            {
+                echo "$item->content<br/>";
+            }
         ?>
     </body>
 </html>

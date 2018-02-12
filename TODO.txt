@@ -1,3 +1,4 @@
 -Model
 -View
+    -> foreach note <div> [Done][Delete] Note contents </div>
 -Controller
